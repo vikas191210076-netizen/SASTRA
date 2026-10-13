@@ -3,29 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10172A">
 
 <title>SASTRA | Learn Anything</title>
 
 <style>
 :root {
-    --bg: #10172A;
-    --panel: #19233B;
-    --card: #202D49;
-    --text: #F5F7FF;
-    --muted: #AAB6D0;
-    --accent: #68A7FF;
-    --border: #344361;
+    --bg: #081120;
+    --card: #142238;
+    --text: #ffffff;
+    --muted: #b9c6d9;
+    --accent: #55c7ff;
+    --border: #263953;
 }
 
 body.light {
-    --bg: #F3F6FC;
-    --panel: #FFFFFF;
-    --card: #FFFFFF;
-    --text: #18223A;
-    --muted: #66738B;
-    --accent: #245FE5;
-    --border: #DCE3EF;
+    --bg: #f2f6fc;
+    --card: #ffffff;
+    --text: #17243a;
+    --muted: #58677e;
+    --accent: #087fc4;
+    --border: #d8e1ed;
 }
 
 * {
@@ -34,294 +31,194 @@ body.light {
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(ellipse at top right,
-        #243D69 0%, transparent 48%),
-        var(--bg);
+    font-family: Arial, sans-serif;
+    background: var(--bg);
     color: var(--text);
-    min-height: 100vh;
-    transition: background .25s, color .25s;
+    transition: 0.3s;
 }
 
 header {
-    padding: 22px 18px;
-    background: rgba(12, 19, 37, .94);
-    border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-    max-width: 900px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #102747, #075c91);
 }
 
 .logo {
-    font-size: 27px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    color: #80B5FF;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 4px;
 }
 
-.tagline {
-    margin: 5px 0 0;
-    color: #BBC8E1;
-    font-size: 12px;
-}
-
-button, input, textarea, select {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-.header-button {
-    background: #253755;
-    color: white;
-    border: 1px solid #45618C;
-    border-radius: 10px;
-    padding: 10px 12px;
+header p {
+    color: #dceeff;
+    margin-bottom: 0;
 }
 
 nav {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    padding: 13px;
-    background: var(--panel);
+    gap: 10px;
+    padding: 12px;
+    background: var(--card);
     position: sticky;
     top: 0;
     z-index: 5;
-    border-bottom: 1px solid var(--border);
+}
+
+button {
+    cursor: pointer;
+    font-size: 14px;
 }
 
 nav button {
     border: 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: var(--text);
     background: transparent;
-    color: var(--muted);
-    padding: 11px 15px;
-    border-radius: 9px;
-    font-weight: bold;
 }
 
-nav button.active,
-nav button:hover {
+nav button:hover,
+nav button.active {
     background: var(--accent);
-    color: white;
+    color: #071525;
 }
 
 main {
-    max-width: 900px;
+    max-width: 1050px;
     margin: auto;
-    padding: 24px 16px 50px;
+    padding: 22px;
 }
 
 .hero {
-    background: linear-gradient(135deg, #233D70, #315DA0, #24365D);
-    border: 1px solid #4969A0;
-    border-radius: 22px;
-    padding: 28px 22px;
-    margin-bottom: 27px;
-    overflow: hidden;
-}
-
-.hero-label {
-    color: #B8D7FF;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    text-align: center;
+    padding: 35px 10px;
 }
 
 .hero h1 {
-    font-size: clamp(29px, 7vw, 43px);
-    line-height: 1.15;
-    margin: 15px 0;
+    font-size: clamp(30px, 6vw, 48px);
+    margin-bottom: 12px;
 }
 
 .hero p {
-    color: #DCE8FF;
+    color: var(--muted);
     line-height: 1.7;
-    max-width: 520px;
 }
 
-.primary-button {
+.primary {
     border: 0;
     border-radius: 10px;
-    background: #FFFFFF;
-    color: #1A3970;
+    padding: 13px 22px;
+    margin-top: 12px;
+    background: var(--accent);
+    color: #071525;
     font-weight: bold;
-    padding: 13px 17px;
-    margin-top: 8px;
 }
 
-h2 {
-    font-size: 23px;
-    margin-bottom: 8px;
+.section-title {
+    margin-top: 30px;
 }
 
-.section-description {
+.muted {
     color: var(--muted);
     line-height: 1.6;
-    margin-top: 0;
 }
 
 .search {
     width: 100%;
     padding: 14px;
+    border-radius: 10px;
     border: 1px solid var(--border);
-    background: var(--panel);
+    background: var(--card);
     color: var(--text);
-    border-radius: 11px;
-    margin: 14px 0 20px;
-    outline-color: var(--accent);
+    margin: 15px 0 20px;
+    font-size: 16px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 13px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
 }
 
 .card {
-    min-width: 0;
-    padding: 17px 14px;
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 15px;
+    border-radius: 16px;
+    padding: 22px;
+    transition: transform 0.2s;
 }
 
-.card-icon {
-    font-size: 29px;
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.icon {
+    font-size: 35px;
 }
 
 .card h3 {
-    font-size: 16px;
-    margin: 13px 0 8px;
+    margin-bottom: 8px;
 }
 
 .card p {
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-.card button, .resource-link {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 10px 12px;
+.card button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
     background: var(--accent);
-    color: white;
     border: 0;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 13px;
+    border-radius: 9px;
+    color: #071525;
     font-weight: bold;
-}
-
-.resource {
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.resource h3 {
-    margin: 0 0 7px;
-    font-size: 16px;
-}
-
-.resource p {
-    color: var(--muted);
-    line-height: 1.6;
-    font-size: 13px;
 }
 
 .panel {
-    padding: 20px;
+    background: var(--card);
     border: 1px solid var(--border);
-    background: var(--panel);
     border-radius: 15px;
-    margin-bottom: 16px;
+    padding: 22px;
+    margin: 18px 0;
 }
 
-label {
-    display: block;
-    margin: 15px 0 7px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-input, textarea, select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: 9px;
-    background: var(--bg);
-    color: var(--text);
+.rating button {
+    font-size: 30px;
+    border: 0;
+    background: transparent;
+    color: #f5b82e;
+    padding: 4px;
 }
 
 textarea {
-    min-height: 95px;
-    resize: vertical;
-}
-
-.action {
-    border: 0;
+    width: 100%;
+    min-height: 90px;
+    padding: 12px;
     border-radius: 9px;
-    background: var(--accent);
-    color: white;
-    padding: 12px 15px;
-    font-weight: bold;
-    margin-top: 12px;
-}
-
-.star-row {
-    display: flex;
-    gap: 7px;
-    margin: 15px 0;
-}
-
-.star {
-    border: 0;
-    background: transparent;
-    color: #68748A;
-    font-size: 34px;
-    padding: 0;
-}
-
-.star.selected {
-    color: #FFC857;
-}
-
-.notice {
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 1.6;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
 }
 
 footer {
     text-align: center;
-    border-top: 1px solid var(--border);
-    padding: 25px 15px;
+    padding: 25px;
     color: var(--muted);
-    font-size: 12px;
+    border-top: 1px solid var(--border);
+    margin-top: 35px;
 }
 
-[hidden] {
+.hidden {
     display: none !important;
 }
 
-@media (max-width: 380px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
+@media (max-width: 450px) {
     nav {
         gap: 2px;
-        padding: 8px 3px;
     }
 
     nav button {
@@ -329,8 +226,8 @@ footer {
         font-size: 12px;
     }
 
-    .logo {
-        font-size: 23px;
+    main {
+        padding: 15px;
     }
 }
 </style>
@@ -339,144 +236,125 @@ footer {
 <body>
 
 <header>
-    <div class="header-inner">
-        <div>
-            <div class="logo">SASTRA.</div>
-            <p class="tagline">Learn Anything. Build Everything.</p>
-        </div>
-        <button class="header-button"
-                onclick="showPage('settings')">
-            Settings ⚙
-        </button>
-    </div>
+    <div class="logo">SASTRA</div>
+    <p>Learn Anything. Build Everything.</p>
 </header>
 
 <nav>
-    <button id="nav-home" class="active"
-            onclick="showPage('home')">START</button>
-    <button id="nav-courses"
-            onclick="showPage('courses')">COURSES</button>
-    <button id="nav-settings"
-            onclick="showPage('settings')">SETTINGS</button>
+    <button class="active" data-page="start">START</button>
+    <button data-page="courses">COURSES</button>
+    <button data-page="settings">SETTINGS</button>
 </nav>
 
 <main>
 
-<section id="page-home">
-
+<!-- START PAGE -->
+<section id="start">
     <div class="hero">
-        <div class="hero-label">YOUR LEARNING JOURNEY STARTS HERE</div>
-        <h1>Discover skills.<br>Build your future.</h1>
+        <h1>Build Your Future with SASTRA</h1>
+
         <p>
-            Find learning resources for AI, design, video editing,
-            programming and more — all in one place.
+            Discover useful learning videos.<br>
+            Learn new skills, explore ideas, and grow every day.
         </p>
-        <button class="primary-button"
-                onclick="showPage('courses')">
+
+        <button class="primary" onclick="showPage('courses')">
             Explore Courses →
         </button>
     </div>
 
-    <h2>Explore Categories</h2>
-    <p class="section-description">
-        Choose a skill you want to learn.
-    </p>
+    <h2 class="section-title">Popular Learning Categories</h2>
 
-    <input class="search"
-           id="courseSearch"
-           placeholder="Search courses..."
-           oninput="renderCourses()"
-           aria-label="Search courses">
+    <div class="grid">
+        <div class="card">
+            <div class="icon">🎬</div>
+            <h3>Video Editing</h3>
+            <p>Learn editing techniques and create videos.</p>
+            <button onclick="openCourse('video')">Watch Video</button>
+        </div>
 
-    <div id="categoryGrid" class="grid"></div>
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Canva</h3>
+            <p>Explore graphic design and creative projects.</p>
+            <button onclick="openCourse('canva')">Watch Video</button>
+        </div>
 
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h3>AI & ChatGPT</h3>
+            <p>Discover artificial intelligence and AI tools.</p>
+            <button onclick="openCourse('ai')">Watch Video</button>
+        </div>
+    </div>
 </section>
 
-<section id="page-courses" hidden>
-    <h2 id="courseTitle">Explore Courses</h2>
-    <p class="section-description">
-        Choose a learning resource to open YouTube.
+<!-- COURSES PAGE -->
+<section id="courses" class="hidden">
+    <h1>Explore Courses</h1>
+
+    <p class="muted">
+        Choose a subject and tap Watch Video to open its
+        recommended YouTube video directly.
     </p>
 
-    <button class="action"
-            onclick="showPage('home')">
-        ← All Categories
-    </button>
+    <input
+        id="search"
+        class="search"
+        type="search"
+        placeholder="Search courses..."
+        oninput="renderCourses()"
+    >
 
-    <div id="resourceList" class="panel"
-         style="margin-top:20px"></div>
+    <div id="courseGrid" class="grid"></div>
 </section>
 
-<section id="page-settings" hidden>
-    <h2>Settings</h2>
-    <p class="section-description">
-        Customize your SASTRA experience.
-    </p>
+<!-- SETTINGS PAGE -->
+<section id="settings" class="hidden">
+    <h1>Settings</h1>
 
     <div class="panel">
         <h3>Appearance</h3>
-        <p class="section-description">
-            Choose your preferred theme.
-        </p>
+        <p class="muted">Choose your preferred website theme.</p>
 
-        <label for="themeSelect">Theme</label>
-        <select id="themeSelect" onchange="changeTheme()">
-            <option value="dark">Dark Navy</option>
-            <option value="light">Clean Light</option>
-        </select>
+        <button class="primary" onclick="toggleTheme()">
+            Change Dark / Light Theme
+        </button>
     </div>
 
     <div class="panel">
         <h3>Rate SASTRA</h3>
-        <p class="section-description">
-            How useful is SASTRA for your learning?
-        </p>
+        <p class="muted">How useful is this learning platform?</p>
 
-        <div class="star-row" aria-label="Choose a rating">
-            <button class="star" data-rating="1"
-                    aria-label="1 star"
-                    onclick="chooseRating(1)">★</button>
-            <button class="star" data-rating="2"
-                    aria-label="2 stars"
-                    onclick="chooseRating(2)">★</button>
-            <button class="star" data-rating="3"
-                    aria-label="3 stars"
-                    onclick="chooseRating(3)">★</button>
-            <button class="star" data-rating="4"
-                    aria-label="4 stars"
-                    onclick="chooseRating(4)">★</button>
-            <button class="star" data-rating="5"
-                    aria-label="5 stars"
-                    onclick="chooseRating(5)">★</button>
+        <div class="rating" id="ratingStars">
+            <button onclick="rate(1)" aria-label="1 star">☆</button>
+            <button onclick="rate(2)" aria-label="2 stars">☆</button>
+            <button onclick="rate(3)" aria-label="3 stars">☆</button>
+            <button onclick="rate(4)" aria-label="4 stars">☆</button>
+            <button onclick="rate(5)" aria-label="5 stars">☆</button>
         </div>
 
-        <label for="feedback">Your statement</label>
-        <textarea id="feedback"
-                  maxlength="1000"
-                  placeholder="Tell us what you think..."></textarea>
+        <p id="ratingMessage" class="muted">
+            Choose a star rating.
+        </p>
 
-        <button class="action" onclick="submitRating()">
-            Submit Rating
+        <label for="feedback">Your feedback</label>
+        <textarea id="feedback" placeholder="Write your suggestions..."></textarea>
+
+        <button class="primary" onclick="saveFeedback()">
+            Save Feedback
         </button>
 
-        <p id="ratingMessage" class="notice" aria-live="polite"></p>
-
-        <p class="notice">
-            Prototype notice: ratings are stored only in this
-            browser. They are not sent to the SASTRA owner.
-        </p>
+        <p id="feedbackMessage" class="muted"></p>
     </div>
 
     <div class="panel">
         <h3>About SASTRA</h3>
-        <p class="section-description">
-            SASTRA helps learners discover learning resources
-            across creative skills, AI, programming and education.
+        <p class="muted">
+            SASTRA is a learning platform designed to help people
+            discover educational videos and develop new skills.
         </p>
-        <p class="section-description">
-            Our goal is to make finding useful learning material
-            easier, so learners can spend more time learning.
-        </p>
+
         <p><strong>Version:</strong> 1.0</p>
         <p><strong>Tagline:</strong> Learn Anything. Build Everything.</p>
     </div>
@@ -485,335 +363,223 @@ footer {
 </main>
 
 <footer>
-    <strong>SASTRA</strong>
-    <p>Learn Anything. Build Everything.</p>
-    <p>Learning resources link to external websites.</p>
+    <p>© 2026 SASTRA Learning Platform</p>
+    <p>Learn • Create • Grow</p>
 </footer>
 
 <script>
+
 /*
-====================================================
-SASTRA COURSE CONTROL CENTRE
-====================================================
+  COURSE SETTINGS
 
-You can add, edit or delete courses in this list.
+  Change the videoUrl value to the YouTube video you want.
 
-To add a course, copy one course object and change:
-id, name, icon, description, and resources.
+  Format:
+  https://www.youtube.com/watch?v=VIDEO_ID
 
-Each resource needs a title and a YouTube search URL.
-
-These changes currently require editing this file.
-====================================================
+  Do not use YouTube search-result URLs here.
 */
 
 const COURSES = [
     {
-        id: "video-editing",
-        name: "Video Editing",
+        id: "video",
         icon: "🎬",
-        description: "Learn editing, transitions and storytelling.",
-        resources: [
-            {
-                title: "Beginner Video Editing",
-                url: "https://www.youtube.com/results?search_query=video+editing+course+for+beginners"
-            },
-            {
-                title: "CapCut Tutorials",
-                url: "https://www.youtube.com/results?search_query=CapCut+editing+tutorial+beginner"
-            },
-            {
-                title: "VN Editor Tutorials",
-                url: "https://www.youtube.com/results?search_query=VN+video+editor+full+tutorial"
-            }
-        ]
+        title: "Video Editing",
+        description: "Learn editing, transitions, and video creation.",
+        videoUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U"
     },
     {
         id: "canva",
-        name: "Canva & Design",
         icon: "🎨",
-        description: "Design posters, presentations and thumbnails.",
-        resources: [
-            {
-                title: "Canva Complete Beginner Course",
-                url: "https://www.youtube.com/results?search_query=Canva+complete+course+for+beginners"
-            },
-            {
-                title: "Graphic Design Basics",
-                url: "https://www.youtube.com/results?search_query=graphic+design+fundamentals+course"
-            },
-            {
-                title: "Thumbnail Design",
-                url: "https://www.youtube.com/results?search_query=YouTube+thumbnail+design+Canva+tutorial"
-            }
-        ]
+        title: "Canva & Graphic Design",
+        description: "Learn designs, posters, presentations, and thumbnails.",
+        videoUrl: "https://www.youtube.com/@Canva"
     },
     {
-        id: "chatgpt",
-        name: "ChatGPT & AI",
+        id: "ai",
         icon: "🤖",
-        description: "Explore AI tools and learn effective prompting.",
-        resources: [
-            {
-                title: "ChatGPT for Beginners",
-                url: "https://www.youtube.com/results?search_query=ChatGPT+full+course+for+beginners"
-            },
-            {
-                title: "Prompt Engineering",
-                url: "https://www.youtube.com/results?search_query=prompt+engineering+course+for+beginners"
-            },
-            {
-                title: "Useful AI Tools",
-                url: "https://www.youtube.com/results?search_query=best+AI+tools+tutorial+for+beginners"
-            }
-        ]
+        title: "AI & ChatGPT",
+        description: "Explore artificial intelligence and ChatGPT.",
+        videoUrl: "https://www.youtube.com/@OpenAI"
     },
     {
         id: "programming",
-        name: "Programming",
         icon: "💻",
-        description: "Start coding and understand programming basics.",
-        resources: [
-            {
-                title: "C Programming for Beginners",
-                url: "https://www.youtube.com/results?search_query=C+programming+full+course+beginners"
-            },
-            {
-                title: "Python Programming",
-                url: "https://www.youtube.com/results?search_query=Python+programming+full+course+beginners"
-            },
-            {
-                title: "Java Programming",
-                url: "https://www.youtube.com/results?search_query=Java+programming+course+beginners"
-            }
-        ]
+        title: "Programming",
+        description: "Start learning programming and coding basics.",
+        videoUrl: "https://www.youtube.com/watch?v=rfscVS0vtbw"
     },
     {
-        id: "web-development",
-        name: "Web Development",
+        id: "web",
         icon: "🌐",
-        description: "Learn to build websites from scratch.",
-        resources: [
-            {
-                title: "HTML for Beginners",
-                url: "https://www.youtube.com/results?search_query=HTML+full+course+for+beginners"
-            },
-            {
-                title: "CSS Tutorials",
-                url: "https://www.youtube.com/results?search_query=CSS+full+course+for+beginners"
-            },
-            {
-                title: "JavaScript Tutorials",
-                url: "https://www.youtube.com/results?search_query=JavaScript+full+course+for+beginners"
-            }
-        ]
+        title: "Web Development",
+        description: "Learn HTML, CSS, and JavaScript.",
+        videoUrl: "https://www.youtube.com/watch?v=kUMe1FH4CHE"
     },
     {
-        id: "content-creation",
-        name: "Content Creation",
+        id: "content",
         icon: "📱",
-        description: "Learn YouTube, Reels and digital storytelling.",
-        resources: [
-            {
-                title: "Content Creation for Beginners",
-                url: "https://www.youtube.com/results?search_query=content+creation+course+for+beginners"
-            },
-            {
-                title: "YouTube Channel Growth",
-                url: "https://www.youtube.com/results?search_query=YouTube+channel+growth+course"
-            },
-            {
-                title: "Instagram Reels",
-                url: "https://www.youtube.com/results?search_query=Instagram+Reels+creation+tutorial"
-            }
-        ]
+        title: "Content Creation",
+        description: "Learn to plan and create digital content.",
+        videoUrl: "https://www.youtube.com/@YouTubeCreators"
     },
     {
-        id: "exam-preparation",
-        name: "Exam Preparation",
+        id: "exam",
         icon: "📚",
-        description: "Find revision lessons and study resources.",
-        resources: [
-            {
-                title: "Study Techniques",
-                url: "https://www.youtube.com/results?search_query=effective+study+techniques+for+students"
-            },
-            {
-                title: "Exam Revision Strategies",
-                url: "https://www.youtube.com/results?search_query=exam+revision+strategy+students"
-            }
-        ]
+        title: "Exam Preparation",
+        description: "Explore study techniques and revision tips.",
+        videoUrl: "https://www.youtube.com/watch?v=p60rN9JEapg"
     }
 ];
 
-let selectedRating = 0;
-let selectedCourse = null;
+/* Navigation */
 
 function showPage(page) {
     document.querySelectorAll("main > section").forEach(section => {
-        section.hidden = true;
+        section.classList.add("hidden");
     });
 
-    document.getElementById("page-" + page).hidden = false;
+    document.getElementById(page).classList.remove("hidden");
 
     document.querySelectorAll("nav button").forEach(button => {
-        button.classList.remove("active");
+        button.classList.toggle(
+            "active",
+            button.dataset.page === page
+        );
     });
-
-    const navButton = document.getElementById("nav-" + page);
-    if (navButton) navButton.classList.add("active");
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+document.querySelectorAll("nav button").forEach(button => {
+    button.addEventListener("click", () => {
+        showPage(button.dataset.page);
+    });
+});
+
+/* Course cards */
+
 function renderCourses() {
-    const grid = document.getElementById("categoryGrid");
-    const query = document.getElementById("courseSearch")
-        .value.toLowerCase().trim();
+    const grid = document.getElementById("courseGrid");
+    const search = document.getElementById("search").value.toLowerCase();
 
     const filtered = COURSES.filter(course =>
-        (course.name + " " + course.description)
-            .toLowerCase().includes(query)
+        course.title.toLowerCase().includes(search) ||
+        course.description.toLowerCase().includes(search)
     );
 
-    grid.replaceChildren();
+    grid.innerHTML = "";
 
-    if (!filtered.length) {
-        grid.textContent = "No matching courses found.";
+    if (filtered.length === 0) {
+        grid.innerHTML = "<p>No courses found. Try another search.</p>";
         return;
     }
 
     filtered.forEach(course => {
-        const card = document.createElement("article");
+        const card = document.createElement("div");
         card.className = "card";
 
         const icon = document.createElement("div");
-        icon.className = "card-icon";
+        icon.className = "icon";
         icon.textContent = course.icon;
 
         const title = document.createElement("h3");
-        title.textContent = course.name;
+        title.textContent = course.title;
 
         const description = document.createElement("p");
         description.textContent = course.description;
 
         const button = document.createElement("button");
-        button.textContent = "View Resources →";
-        button.addEventListener("click", () => openCourse(course.id));
+        button.textContent = "▶ Watch Video";
+
+        button.addEventListener("click", () => {
+            openCourse(course.id);
+        });
 
         card.append(icon, title, description, button);
         grid.appendChild(card);
     });
 }
 
-function openCourse(courseId) {
-    const course = COURSES.find(item => item.id === courseId);
-    if (!course) return;
+/* Open a course's saved destination */
 
-    selectedCourse = course;
+function openCourse(id) {
+    const course = COURSES.find(item => item.id === id);
 
-    document.getElementById("courseTitle").textContent = course.name;
-
-    const list = document.getElementById("resourceList");
-    list.replaceChildren();
-
-    course.resources.forEach(resource => {
-        const article = document.createElement("article");
-        article.className = "resource";
-
-        const title = document.createElement("h3");
-        title.textContent = resource.title;
-
-        const description = document.createElement("p");
-        description.textContent = "Open this learning resource on YouTube.";
-
-        const link = document.createElement("a");
-        link.className = "resource-link";
-        link.textContent = "Open on YouTube ↗";
-        link.href = resource.url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-
-        article.append(title, description, link);
-        list.appendChild(article);
-    });
-
-    showPage("courses");
-}
-
-function changeTheme() {
-    const theme = document.getElementById("themeSelect").value;
-    document.body.classList.toggle("light", theme === "light");
-
-    try {
-        localStorage.setItem("sastra-theme", theme);
-    } catch (error) {
-        // Theme still works for the current page.
-    }
-}
-
-function loadTheme() {
-    try {
-        const theme = localStorage.getItem("sastra-theme") || "dark";
-        document.getElementById("themeSelect").value = theme;
-        document.body.classList.toggle("light", theme === "light");
-    } catch (error) {
-        document.body.classList.remove("light");
-    }
-}
-
-function chooseRating(rating) {
-    selectedRating = rating;
-
-    document.querySelectorAll(".star").forEach(button => {
-        const value = Number(button.dataset.rating);
-        button.classList.toggle("selected", value <= rating);
-    });
-}
-
-function submitRating() {
-    const statement = document.getElementById("feedback").value.trim();
-    const message = document.getElementById("ratingMessage");
-
-    if (!selectedRating) {
-        message.textContent = "Please select a star rating first.";
+    if (!course || !course.videoUrl) {
+        alert("This course does not have a video link yet.");
         return;
     }
 
-    const rating = {
-        stars: selectedRating,
-        statement: statement,
+    window.open(course.videoUrl, "_blank", "noopener,noreferrer");
+}
+
+/* Theme */
+
+function applyTheme() {
+    const theme = localStorage.getItem("sastra-theme") || "dark";
+    document.body.classList.toggle("light", theme === "light");
+}
+
+function toggleTheme() {
+    const isLight = document.body.classList.toggle("light");
+
+    localStorage.setItem(
+        "sastra-theme",
+        isLight ? "light" : "dark"
+    );
+}
+
+/* Ratings: saved in this browser only */
+
+let selectedRating = 0;
+
+function rate(value) {
+    selectedRating = value;
+
+    document.querySelectorAll("#ratingStars button").forEach((button, index) => {
+        button.textContent = index < value ? "★" : "☆";
+    });
+
+    document.getElementById("ratingMessage").textContent =
+        "You selected " + value + " out of 5 stars.";
+}
+
+function saveFeedback() {
+    const feedback = document.getElementById("feedback").value.trim();
+
+    if (selectedRating === 0) {
+        document.getElementById("feedbackMessage").textContent =
+            "Please choose a star rating first.";
+        return;
+    }
+
+    const entry = {
+        rating: selectedRating,
+        feedback: feedback,
         date: new Date().toISOString()
     };
 
-    try {
-        const ratings = JSON.parse(
-            localStorage.getItem("sastra-ratings") || "[]"
-        );
+    const saved = JSON.parse(
+        localStorage.getItem("sastra-feedback") || "[]"
+    );
 
-        ratings.push(rating);
+    saved.push(entry);
 
-        localStorage.setItem("sastra-ratings", JSON.stringify(ratings));
+    localStorage.setItem("sastra-feedback", JSON.stringify(saved));
 
-        message.textContent =
-            "Thank you! Your rating has been saved on this device. " +
-            "It has not been sent to the site owner.";
-    } catch (error) {
-        message.textContent =
-            "Your browser could not save the rating. Please try again.";
-    }
+    document.getElementById("feedbackMessage").textContent =
+        "Thank you! Your feedback was saved in this browser.";
 
     document.getElementById("feedback").value = "";
-    selectedRating = 0;
-
-    document.querySelectorAll(".star").forEach(button => {
-        button.classList.remove("selected");
-    });
 }
 
-loadTheme();
+/* Start the app */
+
+applyTheme();
 renderCourses();
+
 </script>
 
 </body>
-                                </html>
+</html>
